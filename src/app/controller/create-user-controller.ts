@@ -1,7 +1,7 @@
 import { users } from '../../db/schemas/user';
 import { db } from '../../db/client';
 import bcrypt from 'bcrypt';
-import { findUserByEmail } from './find-user-by-email';
+import { findUserByEmail } from './find-user-by-email-controller';
 
 interface userRequest {
   name: string;
@@ -20,7 +20,6 @@ export async function createUserController({
     return 'Email já cadastrado!';
   }
 
-  console.log('>> Vai hashear a senha agora');
   const passwordHash = await bcrypt.hash(password, 6);
 
   const user = await db.insert(users).values({

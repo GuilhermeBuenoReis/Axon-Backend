@@ -1,4 +1,4 @@
-import { findUserByEmail } from './find-user-by-email';
+import { findUserByEmail } from './find-user-by-email-controller';
 import { db } from '../../db/client';
 import { users } from '../../db/schemas/user';
 import { eq } from 'drizzle-orm';

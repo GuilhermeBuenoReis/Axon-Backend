@@ -7,3 +7,11 @@ Content-Type: application/json
   "email": "guilhermebuenoreis@gmail.com",
   "password": "123456"
 }
+
+### Enviar magic link por e-mail
+POST http://localhost:3333/api/auth/magic-link
+Content-Type: application/json
+
+{
+  "email": "guilhermebuenoreis@gmail.com"
+}

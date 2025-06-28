@@ -49,6 +49,40 @@
           }
         }
       }
+    },
+    "/api/auth/magic-link": {
+      "post": {
+        "operationId": "sendMagicLink",
+        "tags": [
+          "auth"
+        ],
+        "description": "Envia um link mágico por email para login",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "email": {
+                    "type": "string",
+                    "format": "email",
+                    "pattern": "^(?!\\.)(?!.*\\.\\.)([A-Za-z0-9_'+\\-\\.]*)[A-Za-z0-9_+-]@([A-Za-z0-9][A-Za-z0-9\\-]*\\.)+[A-Za-z]{2,}$"
+                  }
+                },
+                "required": [
+                  "email"
+                ]
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "204": {
+            "description": "Default Response"
+          }
+        }
+      }
     }
   }
 }

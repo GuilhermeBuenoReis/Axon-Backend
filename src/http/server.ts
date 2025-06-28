@@ -11,6 +11,7 @@ import { resolve } from 'node:path';
 import { writeFile } from 'node:fs/promises';
 import { v4 as uuidv4 } from 'uuid';
 import { fastifySwagger } from '@fastify/swagger';
+import { sendMagicLinkRoute } from '../app/routes/send-magic-link-route';
 
 const app = fastify().withTypeProvider<ZodTypeProvider>();
 
@@ -28,6 +29,7 @@ app.register(fastifySwagger, {
 });
 
 app.register(createUserRoute);
+app.register(sendMagicLinkRoute);
 
 app
   .listen({

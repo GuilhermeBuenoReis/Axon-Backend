@@ -12,7 +12,7 @@ jest.mock('../../db/client', () => ({
 import { createUserController } from './create-user-controller';
 import bcrypt from 'bcrypt';
 import { users } from '../../db/schemas/user';
-import * as findUserModule from './find-user-by-email';
+import * as findUserModule from './find-user-by-email-controller';
 
 jest.mock('bcrypt');
 const mockHash = bcrypt.hash as jest.Mock;
