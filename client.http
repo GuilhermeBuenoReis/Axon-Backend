@@ -1,0 +1,9 @@
+### Criar novo usuário
+POST http://localhost:3333/api/user/create
+Content-Type: application/json
+
+{
+  "name": "Guilherme Bueno",
+  "email": "guilhermebuenoreis@gmail.com",
+  "password": "123456"
+}
