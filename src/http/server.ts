@@ -12,11 +12,16 @@ import { writeFile } from 'node:fs/promises';
 import { v4 as uuidv4 } from 'uuid';
 import { fastifySwagger } from '@fastify/swagger';
 import { sendMagicLinkRoute } from '../app/routes/send-magic-link-route';
+import cors from '@fastify/cors';
 
 const app = fastify().withTypeProvider<ZodTypeProvider>();
 
 app.setValidatorCompiler(validatorCompiler);
 app.setSerializerCompiler(serializerCompiler);
+
+app.register(cors, {
+  origin: '*',
+});
 
 app.register(fastifySwagger, {
   openapi: {
