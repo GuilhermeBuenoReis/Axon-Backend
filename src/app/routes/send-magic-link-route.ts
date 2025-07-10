@@ -21,10 +21,6 @@ export const sendMagicLinkRoute: FastifyPluginAsyncZod =
         },
       },
       async (request, reply) => {
-        console.log(
-          '📨 Requisição recebida no backend!',
-          request.body
-        );
         const { email } = request.body;
 
         try {
